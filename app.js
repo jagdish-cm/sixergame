@@ -16,13 +16,10 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
 
 // connnect Mongodb
-mongoose.connect(
-  "mongodb+srv://jcm:ramram@cluster0.j9nm3.mongodb.net/sixer?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+mongoose.connect("mongodb://localhost:27017/sixer", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 let db = mongoose.connection;
 // Check connections
 db.once("open", function () {
